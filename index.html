@@ -48,6 +48,8 @@
     <section id="hero" class="hero section dark-background position-relative" style="overflow:hidden;">
       <div class="animated-bg"></div>
       <img src="assets/img/lg.jpeg" alt="" data-aos="fade-in" class="">
+      <!-- Dalga SVG animasyonu -->
+      <svg class="hero-wave" viewBox="0 0 1440 120" style="position:absolute;bottom:0;left:0;width:100%;z-index:1;"><path fill="#b30000" fill-opacity="0.18" d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,80C672,64,768,64,864,80C960,96,1056,128,1152,128C1248,128,1344,96,1392,80L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <p>I'm <span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer"></span> Developer</p>
       </div>
@@ -63,9 +65,35 @@
           <div class="col-lg-9">
             <h2 class="kulup-title">Tokat Gaziosmanpaşa Kızılelma Teknolojiler Kulübü</h2>
             <p class="kulup-desc">Kurucusu olduğum bu kulüp, üniversitemizde teknoloji ve yazılım alanında etkinlikler, atölyeler ve sosyal projeler düzenlemektedir. Katılmak ve daha fazla bilgi almak için iletişime geçebilirsin!</p>
+            <button class="btn join-btn mt-3" onclick="document.getElementById('kulupModal').style.display='block'">Kulübe Katıl</button>
           </div>
         </div>
       </div>
+      <!-- Modal -->
+      <div id="kulupModal" class="kulup-modal" style="display:none;">
+        <div class="kulup-modal-content">
+          <span class="close-modal" onclick="document.getElementById('kulupModal').style.display='none'">&times;</span>
+          <h3>Kulübe Katıl</h3>
+          <form id="kulupForm">
+            <input type="text" class="form-control mb-2" placeholder="Ad Soyad" required>
+            <input type="email" class="form-control mb-2" placeholder="E-posta" required>
+            <input type="text" class="form-control mb-2" placeholder="Bölüm/Sınıf" required>
+            <button type="submit" class="btn w-100">Başvur</button>
+            <div class="kulup-form-msg mt-2" style="display:none;color:green;">Başvurun alındı! Teşekkürler.</div>
+          </form>
+        </div>
+      </div>
+      <script>
+        document.getElementById('kulupForm').onsubmit = function(e) {
+          e.preventDefault();
+          this.querySelector('.kulup-form-msg').style.display = 'block';
+          setTimeout(()=>{
+            document.getElementById('kulupModal').style.display='none';
+            this.reset();
+            this.querySelector('.kulup-form-msg').style.display = 'none';
+          }, 2000);
+        };
+      </script>
     </section>
     <!-- KULÜP BÖLÜMÜ SONU -->
 
@@ -73,17 +101,45 @@
     <section id="etkinlikler" class="section etkinlikler-efekt" style="background:#f8f9fa; padding: 30px 0;">
       <div class="container" data-aos="fade-up">
         <h3 class="mb-4 etkinlikler-title">Kulüp Duyuruları & Etkinlikler</h3>
-        <ul class="list-group list-group-flush etkinlikler-list">
-          <li class="list-group-item etkinlikler-item">
-            <strong>Yazılım Atölyesi:</strong> 15 Temmuz 2025, Bilgisayar Laboratuvarı - Tüm üyeler davetlidir!
-          </li>
-          <li class="list-group-item etkinlikler-item">
-            <strong>Yeni Üye Kayıtları</strong> başladı! <a href="#contact">Hemen başvur</a>.
-          </li>
-        </ul>
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-3">
+            <div class="etkinlik-card">
+              <div class="etkinlik-icon"><i class="bi bi-laptop"></i></div>
+              <div class="etkinlik-content">
+                <strong>Yazılım Atölyesi</strong>
+                <p>15 Temmuz 2025, Bilgisayar Lab. <br>Tüm üyeler davetlidir!</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-3">
+            <div class="etkinlik-card">
+              <div class="etkinlik-icon"><i class="bi bi-person-plus"></i></div>
+              <div class="etkinlik-content">
+                <strong>Yeni Üye Kayıtları</strong>
+                <p>Başladı! <a href="#kulup">Hemen başvur</a>.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <!-- DUYURULAR/ETKİNLİKLER BÖLÜMÜ SONU -->
+
+    <!-- GALERİ BÖLÜMÜ BAŞLANGIÇ -->
+    <section id="galeri" class="section" style="background:#fff; padding: 40px 0;">
+      <div class="container" data-aos="fade-up">
+        <h3 class="mb-4" style="color:#2196f399;">Kulüp Galerisi</h3>
+        <div class="row g-3">
+          <div class="col-6 col-md-4 col-lg-2"><img src="assets/img/kulub (1).jpg" class="img-fluid galeri-img" alt="Kulüp Foto 1"></div>
+          <div class="col-6 col-md-4 col-lg-2"><img src="assets/img/kulub (2).jpg" class="img-fluid galeri-img" alt="Kulüp Foto 2"></div>
+          <div class="col-6 col-md-4 col-lg-2"><img src="assets/img/kulub (3).jpg" class="img-fluid galeri-img" alt="Kulüp Foto 3"></div>
+          <div class="col-6 col-md-4 col-lg-2"><img src="assets/img/kulub (4).jpg" class="img-fluid galeri-img" alt="Kulüp Foto 4"></div>
+          <div class="col-6 col-md-4 col-lg-2"><img src="assets/img/kulub (5).jpg" class="img-fluid galeri-img" alt="Kulüp Foto 5"></div>
+          <div class="col-6 col-md-4 col-lg-2"><img src="assets/img/kulub (6).jpg" class="img-fluid galeri-img" alt="Kulüp Foto 6"></div>
+        </div>
+      </div>
+    </section>
+    <!-- GALERİ BÖLÜMÜ SONU -->
 
     <section id="about" class="about section">
       <div class="container section-title" data-aos="fade-up">
@@ -311,6 +367,23 @@
   </footer>
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   <div id="preloader"></div>
+  <div id="visitor-counter" style="position:fixed;left:24px;bottom:24px;z-index:9999;background:var(--main-color-light);color:var(--main-color-dark);border-radius:16px;padding:8px 18px;font-weight:600;box-shadow:0 2px 12px #2196f322;font-size:1.1rem;">Ziyaretçi: <span id="visitorCount">...</span></div>
+  <script>
+    // Animasyonlu arka plan sadece açık mod için
+    const animatedBg = document.querySelector('.animated-bg');
+    if(animatedBg) {
+      animatedBg.style.background = 'linear-gradient(120deg, var(--main-color) 0%, #fff 100%)';
+      animatedBg.style.opacity = '0.12';
+    }
+    // Ziyaretçi sayacı (localStorage tabanlı, her cihazda artar)
+    let count = localStorage.getItem('visitorCount') || 0;
+    if(!sessionStorage.getItem('visited')) {
+      count++;
+      localStorage.setItem('visitorCount', count);
+      sessionStorage.setItem('visited', '1');
+    }
+    document.getElementById('visitorCount').textContent = count;
+  </script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
@@ -326,15 +399,92 @@
 
 </html>
 <style>
+    :root {
+      --main-color: #2196f3;
+      --main-color-light: #e3f2fd;
+      --main-color-dark: #1565c0;
+    }
+    /* Hero arka plan animasyonu */
+    .animated-bg {
+      background: linear-gradient(120deg, var(--main-color) 0%, #fff 100%);
+    }
+    .hero-wave path { fill: var(--main-color); fill-opacity: 0.18; }
+    .kulup-logo {
+      box-shadow: 0 0 20px #2196f355, 0 0 0 #fff;
+    }
+    .kulup-logo:hover {
+      box-shadow: 0 0 40px #2196f399;
+    }
+    .kulup-title {
+      color: var(--main-color);
+    }
+    .kulup-title:hover {
+      color: #222;
+    }
+    .kulup-efekt {
+      box-shadow: 0 8px 32px #2196f322;
+    }
+    .kulup-efekt:hover {
+      box-shadow: 0 16px 48px #2196f344;
+    }
+    .close-modal { color: var(--main-color); }
+    .etkinlikler-title {
+      color: var(--main-color);
+    }
+    .etkinlik-card {
+      box-shadow:0 2px 12px #2196f311;
+    }
+    .etkinlik-card:hover {
+      box-shadow:0 8px 32px #2196f333;
+    }
+    .etkinlik-icon { color: var(--main-color); }
+    .etkinlik-content strong { color: var(--main-color); }
+    .galeri-img.active { outline: 4px solid var(--main-color); }
+    .btn, button, .php-email-form button {
+      background: var(--main-color);
+      color: #fff;
+    }
+    .btn:hover, button:hover, .php-email-form button:hover {
+      background: var(--main-color-dark);
+      color: #fff;
+    }
+    a, a:visited, a:active {
+      color: var(--main-color-dark);
+      transition: color 0.2s;
+    }
+    a:hover {
+      color: var(--main-color);
+    }
+    /* Diğer renkli detaylar */
+    .copyright .sitename, .credits a, .credits .sitename {
+      color: var(--main-color);
+    }
+    /* Progress bar animasyonu */
+    .progress-bar {
+      background: var(--main-color);
+    }
+    /* Scroll-top butonu */
+    #scroll-top {
+      background: var(--main-color);
+      color: #fff;
+    }
+    #scroll-top:hover {
+      background: var(--main-color-dark);
+    }
+    /* Galeri lightbox close */
+    .galeri-lightbox-close {
+      color: var(--main-color);
+    }
     /* Hero arka plan animasyonu */
     .animated-bg {
       position: absolute;
       top: 0; left: 0; width: 100%; height: 100%;
-      background: linear-gradient(120deg, #b30000 0%, #fff 100%);
+      background: linear-gradient(120deg, var(--main-color) 0%, #fff 100%);
       opacity: 0.12;
       z-index: 0;
       animation: bgmove 8s linear infinite alternate;
     }
+    .hero-wave { pointer-events:none; }
     @keyframes bgmove {
       0% { filter: blur(0px) brightness(1); }
       100% { filter: blur(8px) brightness(1.2); }
@@ -343,16 +493,16 @@
     .kulup-logo {
       max-width: 120px;
       border-radius: 50%;
-      box-shadow: 0 0 20px #b3000055, 0 0 0 #fff;
+      box-shadow: 0 0 20px #2196f355, 0 0 0 #fff;
       transition: transform 0.4s cubic-bezier(.4,2,.6,1);
     }
     .kulup-logo:hover {
       transform: scale(1.12) rotate(-8deg);
-      box-shadow: 0 0 40px #b3000099;
+      box-shadow: 0 0 40px #2196f399;
     }
     .kulup-title {
       font-weight: 700;
-      color: #b30000;
+      color: var(--main-color);
       letter-spacing: 1px;
       transition: color 0.3s;
     }
@@ -365,34 +515,51 @@
       transition: color 0.3s;
     }
     .kulup-efekt {
-      box-shadow: 0 8px 32px #b3000022;
+      box-shadow: 0 8px 32px #2196f322;
       border-radius: 18px;
       margin-bottom: 32px;
       transition: box-shadow 0.4s;
     }
     .kulup-efekt:hover {
-      box-shadow: 0 16px 48px #b3000044;
+      box-shadow: 0 16px 48px #2196f344;
     }
-    /* Etkinlikler bölümü efektleri */
-    .etkinlikler-title {
-      color: #b30000;
-      font-weight: 600;
-      letter-spacing: 1px;
+    /* Modal */
+    .kulup-modal {
+      position: fixed; z-index: 9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.4); display:flex; align-items:center; justify-content:center;
     }
-    .etkinlikler-list .etkinlikler-item {
-      background: #fff;
-      border-radius: 8px;
-      margin-bottom: 10px;
-      box-shadow: 0 2px 8px #b3000011;
-      transition: box-shadow 0.3s, background 0.3s;
+    .kulup-modal-content {
+      background:#fff; padding:32px 24px; border-radius:16px; box-shadow:0 8px 32px #2196f322; min-width:320px; max-width:90vw; position:relative;
+      animation: modalpop 0.4s cubic-bezier(.4,2,.6,1);
     }
-    .etkinlikler-list .etkinlikler-item:hover {
-      background: #ffeaea;
-      box-shadow: 0 4px 16px #b3000033;
+    @keyframes modalpop { 0%{transform:scale(0.7);opacity:0;} 100%{transform:scale(1);opacity:1;} }
+    .close-modal { position:absolute; top:12px; right:18px; font-size:2rem; color:var(--main-color); cursor:pointer; }
+    /* Etkinlik kartları */
+    .etkinlik-card {
+      background:#fff; border-radius:14px; box-shadow:0 2px 12px #2196f311; padding:20px 18px; display:flex; align-items:center; gap:18px; transition:box-shadow 0.3s, transform 0.2s;
+    }
+    .etkinlik-card:hover {
+      box-shadow:0 8px 32px #2196f333; transform:translateY(-6px) scale(1.03);
+    }
+    .etkinlik-icon { font-size:2.2rem; color:var(--main-color); }
+    .etkinlik-content strong { color:var(--main-color); }
+    /* Galeri */
+    .galeri-img { border-radius:12px; box-shadow:0 2px 12px #2196f311; transition:transform 0.3s, box-shadow 0.3s; cursor:pointer; }
+    .galeri-img:hover { transform:scale(1.12) rotate(-2deg); box-shadow:0 8px 32px #2196f333; z-index:2; }
+    .galeri-img.active { outline: 4px solid var(--main-color); }
+    /* Galeri lightbox */
+    .galeri-lightbox-bg {
+      position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); z-index:9999; display:flex; align-items:center; justify-content:center;
+    }
+    .galeri-lightbox-img {
+      max-width:90vw; max-height:80vh; border-radius:18px; box-shadow:0 8px 32px #2196f322;
+      animation: modalpop 0.4s cubic-bezier(.4,2,.6,1);
+    }
+    .galeri-lightbox-close {
+      position:absolute; top:32px; right:48px; font-size:3rem; color:var(--main-color); cursor:pointer; z-index:10000;
     }
     /* Genel buton ve başlık efektleri */
     .btn, button, .php-email-form button {
-      background: #b30000;
+      background: var(--main-color);
       color: #fff;
       border: none;
       border-radius: 8px;
@@ -401,7 +568,7 @@
       transition: background 0.3s, transform 0.2s;
     }
     .btn:hover, button:hover, .php-email-form button:hover {
-      background: #222;
+      background: var(--main-color-dark);
       color: #fff;
       transform: scale(1.06);
     }
@@ -413,4 +580,25 @@
     [data-aos].aos-animate {
       opacity: 1;
     }
+    html { scroll-behavior: smooth; }
   </style>
+  <script>
+    // Galeri lightbox
+    document.querySelectorAll('.galeri-img').forEach(function(img) {
+      img.onclick = function() {
+        var bg = document.createElement('div');
+        bg.className = 'galeri-lightbox-bg';
+        var close = document.createElement('span');
+        close.className = 'galeri-lightbox-close';
+        close.innerHTML = '&times;';
+        var big = document.createElement('img');
+        big.className = 'galeri-lightbox-img';
+        big.src = this.src;
+        bg.appendChild(big);
+        bg.appendChild(close);
+        document.body.appendChild(bg);
+        close.onclick = function() { document.body.removeChild(bg); };
+        bg.onclick = function(e) { if(e.target===bg) document.body.removeChild(bg); };
+      };
+    });
+  </script>
