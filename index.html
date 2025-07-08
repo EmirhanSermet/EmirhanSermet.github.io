@@ -92,7 +92,7 @@
 
       <div class="container section-title" data-aos="fade-up">
         <h2>Hakkında</h2>
-        <p>Adım Emirhan Tokat Gaziosmanpaşa Üniversitesi bilgisayar mühendisliği 2. sınıf öğrencisiyim , küçüklüğümden bu zamana kadar hep yeni şeyler için uğraştım bundan sonrasıda öyle olucak ...</p>
+        <p>Adım Emirhan, Tokat Gaziosmanpaşa Üniversitesi Bilgisayar Mühendisliği 2. sınıf öğrencisiyim. Küçüklüğümden bu yana yeni şeyler öğrenmeye ve üretmeye meraklıyım. Ayrıca Tokat Gaziosmanpaşa Kızılelma Teknolojiler Kulübü'nün kurucusuyum.</p>
       </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -396,3 +396,207 @@
 </body>
 
 </html>
+<style>
+    :root {
+      --main-color: #2196f3;
+      --main-color-light: #e3f2fd;
+      --main-color-dark: #1565c0;
+    }
+    /* Hero arka plan animasyonu */
+    .animated-bg {
+      background: linear-gradient(120deg, var(--main-color) 0%, #fff 100%);
+    }
+    .hero-wave path { fill: var(--main-color); fill-opacity: 0.18; }
+    .kulup-logo {
+      box-shadow: 0 0 20px #2196f355, 0 0 0 #fff;
+    }
+    .kulup-logo:hover {
+      box-shadow: 0 0 40px #2196f399;
+    }
+    .kulup-title {
+      color: var(--main-color);
+    }
+    .kulup-title:hover {
+      color: #222;
+    }
+    .kulup-efekt {
+      box-shadow: 0 8px 32px #2196f322;
+    }
+    .kulup-efekt:hover {
+      box-shadow: 0 16px 48px #2196f344;
+    }
+    .close-modal { color: var(--main-color); }
+    .etkinlikler-title {
+      color: var(--main-color);
+    }
+    .etkinlik-card {
+      box-shadow:0 2px 12px #2196f311;
+    }
+    .etkinlik-card:hover {
+      box-shadow:0 8px 32px #2196f333;
+    }
+    .etkinlik-icon { color: var(--main-color); }
+    .etkinlik-content strong { color: var(--main-color); }
+    .galeri-img.active { outline: 4px solid var(--main-color); }
+    .btn, button, .php-email-form button {
+      background: var(--main-color);
+      color: #fff;
+    }
+    .btn:hover, button:hover, .php-email-form button:hover {
+      background: var(--main-color-dark);
+      color: #fff;
+    }
+    a, a:visited, a:active {
+      color: var(--main-color-dark);
+      transition: color 0.2s;
+    }
+    a:hover {
+      color: var(--main-color);
+    }
+    /* Diğer renkli detaylar */
+    .copyright .sitename, .credits a, .credits .sitename {
+      color: var(--main-color);
+    }
+    /* Progress bar animasyonu */
+    .progress-bar {
+      background: var(--main-color);
+    }
+    /* Scroll-top butonu */
+    #scroll-top {
+      background: var(--main-color);
+      color: #fff;
+    }
+    #scroll-top:hover {
+      background: var(--main-color-dark);
+    }
+    /* Galeri lightbox close */
+    .galeri-lightbox-close {
+      color: var(--main-color);
+    }
+    /* Hero arka plan animasyonu */
+    .animated-bg {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(120deg, var(--main-color) 0%, #fff 100%);
+      opacity: 0.12;
+      z-index: 0;
+      animation: bgmove 8s linear infinite alternate;
+    }
+    .hero-wave { pointer-events:none; }
+    @keyframes bgmove {
+      0% { filter: blur(0px) brightness(1); }
+      100% { filter: blur(8px) brightness(1.2); }
+    }
+    /* Kulüp bölümü efektleri */
+    .kulup-logo {
+      max-width: 120px;
+      border-radius: 50%;
+      box-shadow: 0 0 20px #2196f355, 0 0 0 #fff;
+      transition: transform 0.4s cubic-bezier(.4,2,.6,1);
+    }
+    .kulup-logo:hover {
+      transform: scale(1.12) rotate(-8deg);
+      box-shadow: 0 0 40px #2196f399;
+    }
+    .kulup-title {
+      font-weight: 700;
+      color: var(--main-color);
+      letter-spacing: 1px;
+      transition: color 0.3s;
+    }
+    .kulup-title:hover {
+      color: #222;
+    }
+    .kulup-desc {
+      font-size: 1.1em;
+      color: #333;
+      transition: color 0.3s;
+    }
+    .kulup-efekt {
+      box-shadow: 0 8px 32px #2196f322;
+      border-radius: 18px;
+      margin-bottom: 32px;
+      transition: box-shadow 0.4s;
+    }
+    .kulup-efekt:hover {
+      box-shadow: 0 16px 48px #2196f344;
+    }
+    /* Modal */
+    .kulup-modal {
+      position: fixed; z-index: 9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.4); display:flex; align-items:center; justify-content:center;
+    }
+    .kulup-modal-content {
+      background:#fff; padding:32px 24px; border-radius:16px; box-shadow:0 8px 32px #2196f322; min-width:320px; max-width:90vw; position:relative;
+      animation: modalpop 0.4s cubic-bezier(.4,2,.6,1);
+    }
+    @keyframes modalpop { 0%{transform:scale(0.7);opacity:0;} 100%{transform:scale(1);opacity:1;} }
+    .close-modal { position:absolute; top:12px; right:18px; font-size:2rem; color:var(--main-color); cursor:pointer; }
+    /* Etkinlik kartları */
+    .etkinlik-card {
+      background:#fff; border-radius:14px; box-shadow:0 2px 12px #2196f311; padding:20px 18px; display:flex; align-items:center; gap:18px; transition:box-shadow 0.3s, transform 0.2s;
+    }
+    .etkinlik-card:hover {
+      box-shadow:0 8px 32px #2196f333; transform:translateY(-6px) scale(1.03);
+    }
+    .etkinlik-icon { font-size:2.2rem; color:var(--main-color); }
+    .etkinlik-content strong { color:var(--main-color); }
+    /* Galeri */
+    .galeri-img { border-radius:12px; box-shadow:0 2px 12px #2196f311; transition:transform 0.3s, box-shadow 0.3s; cursor:pointer; }
+    .galeri-img:hover { transform:scale(1.12) rotate(-2deg); box-shadow:0 8px 32px #2196f333; z-index:2; }
+    .galeri-img.active { outline: 4px solid var(--main-color); }
+    /* Galeri lightbox */
+    .galeri-lightbox-bg {
+      position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); z-index:9999; display:flex; align-items:center; justify-content:center;
+    }
+    .galeri-lightbox-img {
+      max-width:90vw; max-height:80vh; border-radius:18px; box-shadow:0 8px 32px #2196f322;
+      animation: modalpop 0.4s cubic-bezier(.4,2,.6,1);
+    }
+    .galeri-lightbox-close {
+      position:absolute; top:32px; right:48px; font-size:3rem; color:var(--main-color); cursor:pointer; z-index:10000;
+    }
+    /* Genel buton ve başlık efektleri */
+    .btn, button, .php-email-form button {
+      background: var(--main-color);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 28px;
+      font-weight: 600;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn:hover, button:hover, .php-email-form button:hover {
+      background: var(--main-color-dark);
+      color: #fff;
+      transform: scale(1.06);
+    }
+    /* Scroll reveal animasyonu */
+    [data-aos] {
+      opacity: 0;
+      transition-property: opacity, transform;
+    }
+    [data-aos].aos-animate {
+      opacity: 1;
+    }
+    html { scroll-behavior: smooth; }
+  </style>
+  <script>
+    // Galeri lightbox
+    document.querySelectorAll('.galeri-img').forEach(function(img) {
+      img.onclick = function() {
+        var bg = document.createElement('div');
+        bg.className = 'galeri-lightbox-bg';
+        var close = document.createElement('span');
+        close.className = 'galeri-lightbox-close';
+        close.innerHTML = '&times;';
+        var big = document.createElement('img');
+        big.className = 'galeri-lightbox-img';
+        big.src = this.src;
+        bg.appendChild(big);
+        bg.appendChild(close);
+        document.body.appendChild(bg);
+        close.onclick = function() { document.body.removeChild(bg); };
+        bg.onclick = function(e) { if(e.target===bg) document.body.removeChild(bg); };
+      };
+    });
+  </script>
