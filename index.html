@@ -258,92 +258,95 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4">
           <div class="col-lg-5">
-            <div class="info-wrap">
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                <div>
-                  <h3>Adres</h3>
-                  <p>Tokat, Turhal</p>
-                </div>
-              </div>
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-                <i class="bi bi-telephone flex-shrink-0"></i>
-                <div>
-                  <h3>Telefon</h3>
-                  <p>+90 552 170 38 60</p>
-                </div>
-              </div>
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-                <i class="bi bi-envelope flex-shrink-0"></i>
-                <div>
-                  <h3>Email</h3>
-                  <p>emohanasd@gmail.com</p>
-                </div>
-              </div>
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3039.004502113901!2d36.01390118563767!3d40.38659282796969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1str!2str!4v1742918211134!5m2!1str!2str" width="440" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="info-wrap">
+          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+            <i class="bi bi-geo-alt flex-shrink-0"></i>
+            <div>
+          <h3>Adres</h3>
+          <p>Tokat, Turhal</p>
             </div>
           </div>
+          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+            <i class="bi bi-telephone flex-shrink-0"></i>
+            <div>
+          <h3>Telefon</h3>
+          <p>+90 552 170 38 60</p>
+            </div>
+          </div>
+          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+            <i class="bi bi-envelope flex-shrink-0"></i>
+            <div>
+          <h3>Email</h3>
+          <p>emohanasd@gmail.com</p>
+            </div>
+          </div>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3039.004502113901!2d36.01390118563767!3d40.38659282796969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1str!2str!4v1742918211134!5m2!1str!2str" width="440" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+          </div>
           <div class="col-lg-7">
-            <form id="contactForm" action="https://formspree.io/f/mkgjkwzz" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
-                <div class="col-md-6">
-                  <label for="name-field" class="pb-2">İsminiz</label>
-                  <input type="text" name="name" id="name-field" class="form-control" required>
-                </div>
-                <div class="col-md-6">
-                  <label for="email-field" class="pb-2">E-postanız</label>
-                  <input type="email" class="form-control" name="email" id="email-field" required>
-                </div>
-                <div class="col-md-12">
-                  <label for="subject-field" class="pb-2">Konu</label>
-                  <input type="text" class="form-control" name="subject" id="subject-field" required>
-                </div>
-                <div class="col-md-12">
-                  <label for="message-field" class="pb-2">Mesaj</label>
-                  <textarea class="form-control" name="message" rows="10" id="message-field" required></textarea>
-                </div>
-                <div class="col-md-12 text-center">
-                  <div class="loading" style="display: none;">Yükleniyor...</div>
-                  <div class="error-message" style="display: none; color: red;"></div>
-                  <div class="sent-message" style="display: none; color: green;">Mesajınız gönderildi. Teşekkürler!</div>
-                  <button type="submit">Mesajı Gönder</button>
-                </div>
-              </div>
-            </form>
-            <script>
-              const form = document.getElementById('contactForm');
-              const loading = form.querySelector('.loading');
-              const errorMessage = form.querySelector('.error-message');
-              const sentMessage = form.querySelector('.sent-message');
-              form.addEventListener('submit', async function (e) {
-                e.preventDefault();
-                loading.style.display = 'block';
-                errorMessage.style.display = 'none';
-                sentMessage.style.display = 'none';
-                const formData = new FormData(form);
-                try {
-                  const response = await fetch(form.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                      'Accept': 'application/json'
-                    }
-                  });
-                  loading.style.display = 'none';
-                  if (response.ok) {
-                    sentMessage.style.display = 'block';
-                    form.reset();
-                  } else {
-                    errorMessage.textContent = 'Bir hata oluştu. Lütfen tekrar deneyin.';
-                    errorMessage.style.display = 'block';
-                  }
-                } catch (error) {
-                  loading.style.display = 'none';
-                  errorMessage.textContent = 'Bağlantı hatası: ' + error.message;
-                  errorMessage.style.display = 'block';
-                }
-              });
-            </script>
+        <form id="contactForm" action="https://formspree.io/f/mkgjkwzz" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+          <div class="row gy-4">
+            <div class="col-md-6">
+          <label for="name-field" class="pb-2">İsminiz</label>
+          <input type="text" name="name" id="name-field" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+          <label for="email-field" class="pb-2">E-postanız</label>
+          <input type="email" class="form-control" name="email" id="email-field" required>
+            </div>
+            <div class="col-md-12">
+          <label for="subject-field" class="pb-2">Konu</label>
+          <input type="text" class="form-control" name="subject" id="subject-field" required>
+            </div>
+            <div class="col-md-12">
+          <label for="message-field" class="pb-2">Mesaj</label>
+          <textarea class="form-control" name="message" rows="10" id="message-field" required></textarea>
+            </div>
+            <div class="col-md-12 text-center">
+          <div class="loading" style="display: none;">Yükleniyor...</div>
+          <div class="error-message" style="display: none; color: red;"></div>
+          <div class="sent-message" style="display: none; color: green;">Mesajınız gönderildi. Teşekkürler!</div>
+          <button type="submit">Mesajı Gönder</button>
+            </div>
+          </div>
+        </form>
+        <script>
+          const form = document.getElementById('contactForm');
+          const loading = form.querySelector('.loading');
+          const errorMessage = form.querySelector('.error-message');
+          const sentMessage = form.querySelector('.sent-message');
+          form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+            loading.style.display = 'block';
+            errorMessage.style.display = 'none';
+            sentMessage.style.display = 'none';
+            const formData = new FormData(form);
+            try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+          loading.style.display = 'none';
+          if (response.ok) {
+            sentMessage.style.display = 'block';
+            errorMessage.style.display = 'none';
+            form.reset();
+          } else {
+            sentMessage.style.display = 'none';
+            errorMessage.textContent = 'Bir hata oluştu. Lütfen tekrar deneyin.';
+            errorMessage.style.display = 'block';
+          }
+            } catch (error) {
+          loading.style.display = 'none';
+          sentMessage.style.display = 'none';
+          errorMessage.textContent = 'Bağlantı hatası: ' + error.message;
+          errorMessage.style.display = 'block';
+            }
+          });
+        </script>
           </div>
         </div>
       </div>
